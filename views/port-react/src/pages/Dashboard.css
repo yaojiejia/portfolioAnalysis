@@ -1,0 +1,122 @@
+.dashboard {
+  padding: 20px;
+}
+
+.summary-section {
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  background-color: #1F2A40;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-item label {
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.summary-item span {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.chart-card {
+  background-color: #1F2A40;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+.chart-card h3 {
+  color: #4CCEAC;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.chart-container {
+  position: relative;
+  height: calc(100% - 40px);
+  width: 100%;
+}
+
+.donut-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donut-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.donut-inner h4 {
+  font-size: 24px;
+  margin: 0;
+  color: #fff;
+}
+
+.donut-inner p {
+  font-size: 14px;
+  margin: 5px 0 0;
+  color: #a0aec0;
+}
+
+.profit {
+  color: #4CCEAC;
+}
+
+.loss {
+  color: #f56565;
+}
+
+@media (max-width: 1200px) {
+  .charts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .chart-card {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-card {
+    height: 300px;
+  }
+  
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}

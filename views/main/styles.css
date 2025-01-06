@@ -1,0 +1,180 @@
+/* Global Resets & Fonts */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+:root {
+	--primary: #2d3748;
+	--secondary: #4a5568;
+	--accent: #48bb78;
+	--card-bg: #2d3748;
+	--text-primary: #ffffff;
+	--text-secondary: #a0aec0;
+}
+
+body {
+	background-color: #1a202c;
+	color: var(--text-primary);
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 250px 1fr;
+	min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+	background-color: var(--primary);
+	padding: 2rem;
+}
+
+.profile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 2rem;
+}
+
+.profile img {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	margin-bottom: 1rem;
+}
+
+.nav-links {
+	list-style: none;
+}
+
+/* Style the <a> links inside the sidebar if desired */
+.nav-links li a {
+	display: block;
+	padding: 0.75rem 0;
+	color: var(--text-secondary);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+	color: var(--text-primary);
+}
+
+/* Main Content */
+.main-content {
+	padding: 2rem;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2rem;
+}
+
+.download-btn {
+	background-color: #4c51bf;
+	color: white;
+	padding: 0.75rem 1.5rem;
+	border-radius: 0.375rem;
+	border: none;
+	cursor: pointer;
+}
+
+.download-btn:hover {
+	background-color: #434190;
+}
+
+/* Portfolio Form */
+.portfolio-form {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+
+.portfolio-form label {
+	display: flex;
+	flex-direction: column;
+	font-size: 0.875rem;
+}
+
+.portfolio-form select,
+.portfolio-form input,
+.portfolio-form button {
+	padding: 0.5rem;
+	border-radius: 0.375rem;
+	border: 1px solid #4a5568;
+	background-color: #2d3748;
+	color: var(--text-primary);
+}
+
+.portfolio-form button {
+	background-color: var(--accent);
+	border: none;
+	cursor: pointer;
+	align-self: flex-end;
+}
+
+.portfolio-form button:hover {
+	opacity: 0.9;
+}
+
+/* Table */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 2rem;
+}
+
+th,
+td {
+	text-align: left;
+	padding: 0.75rem;
+	border-bottom: 1px solid #2d3748;
+}
+
+th {
+	color: var(--text-secondary);
+	font-weight: normal;
+}
+
+/* Stat Card */
+.stat-card {
+	background-color: var(--card-bg);
+	padding: 1rem;
+	border-radius: 0.5rem;
+	margin-bottom: 2rem;
+}
+
+.stat-card h3 {
+	color: var(--text-secondary);
+	font-size: 0.875rem;
+	margin-bottom: 0.5rem;
+}
+
+.stat-card .value {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+/* Charts Grid */
+.charts-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5rem;
+}
+
+.chart-container {
+	background-color: var(--card-bg);
+	padding: 1.5rem;
+	border-radius: 0.5rem;
+}
+
+/* Make the line chart smaller */
+#portfolioChart {
+	max-height: 200px;
+	/* Adjust as needed */
+}

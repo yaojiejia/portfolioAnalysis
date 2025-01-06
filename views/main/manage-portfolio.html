@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Manage Portfolio</title>
+
+	<!-- Optional shared stylesheet -->
+	<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+	<div class="container">
+		<!-- SIDEBAR (Optional) -->
+		<aside class="sidebar">
+			<div class="profile">
+				<img src="/api/placeholder/80/80" alt="Profile">
+				<h2>Stock Dashboard</h2>
+				<p>VP Fancy Admin</p>
+			</div>
+			<ul class="nav-links">
+				<li><a href="index.html" style="text-decoration: none; color: #a0aec0;">Dashboard</a>
+				</li>
+				<li><a href="manage-portfolio.html" style="text-decoration: none; color: #fff;">Manage
+						Portfolio</a></li>
+				<li>Transactions</li>
+				<li>Performance</li>
+				<li>Settings</li>
+			</ul>
+		</aside>
+
+		<!-- MAIN CONTENT -->
+		<main class="main-content">
+			<div class="header">
+				<h1>Manage Portfolio</h1>
+			</div>
+
+			<!-- 1) Search Section -->
+			<div class="portfolio-form">
+				<label for="stockSearch">
+					Stock Symbol:
+					<input type="text" id="stockSearch" placeholder="e.g. AAPL" required />
+				</label>
+				<button id="searchBtn" type="button">Search</button>
+			</div>
+
+			<!-- 2) Search Result Container -->
+			<div id="searchResultContainer" style="margin-top: 2rem;">
+				<!-- We'll fill this with the returned data (symbol, price, stats) 
+             plus a "Quantity" input and an "Add to Portfolio" button. -->
+			</div>
+
+			<!-- 3) Portfolio Table -->
+			<table id="portfolioTable" style="margin-top: 2rem;">
+				<thead>
+					<tr>
+						<th>Stock</th>
+						<th>Quantity</th>
+						<th>Price (USD)</th>
+						<th>Market Value (USD)</th>
+						<th>P/L (USD)</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- Filled by JS -->
+				</tbody>
+			</table>
+		</main>
+	</div>
+
+	<!-- Link to your JS -->
+	<script src="script-manage.js"></script>
+</body>
+
+</html>

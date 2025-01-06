@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Main Dashboard</title>
+
+	<!-- Link the shared stylesheet -->
+	<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+	<div class="container">
+		<!-- Sidebar -->
+		<aside class="sidebar">
+			<div class="profile">
+				<!-- Placeholder image -->
+				<img src="/api/placeholder/80/80" alt="Profile">
+				<h2>Stock Dashboard</h2>
+				<p>VP Fancy Admin</p>
+			</div>
+			<ul class="nav-links">
+				<!-- “Dashboard” points to this page -->
+				<li><a href="index.html" style="color: #fff; text-decoration: none;">Dashboard</a></li>
+				<!-- “Manage Portfolio” goes to our new page -->
+				<li><a href="manage-portfolio.html"
+						style="color: #a0aec0; text-decoration: none;">Manage Portfolio</a></li>
+				<li>Transactions</li>
+				<li>Performance</li>
+				<li>Settings</li>
+			</ul>
+		</aside>
+
+		<!-- Main Content -->
+		<main class="main-content">
+			<div class="header">
+				<h1>Dashboard</h1>
+				<button class="download-btn">DOWNLOAD REPORTS</button>
+			</div>
+
+			<!-- Overall Profit/Loss Card -->
+			<div class="stat-card" id="overallPLCard">
+				<h3>Overall Profit/Loss</h3>
+				<div class="value" id="overallPLValue">$0.00</div>
+			</div>
+
+			<!-- Charts Section -->
+			<div class="charts-grid">
+				<!-- Line Chart (Total Portfolio P/L Over Time) -->
+				<div class="chart-container">
+					<canvas id="portfolioChart"></canvas>
+				</div>
+				<!-- Pie Chart (Portfolio Diversity) -->
+				<div class="chart-container">
+					<canvas id="diversityChart"></canvas>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<!-- Include Chart.js from a CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+	<!-- Main dashboard JS -->
+	<script src="script-main.js"></script>
+</body>
+
+</html>

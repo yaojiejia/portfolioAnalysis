@@ -1,0 +1,152 @@
+.explore-page {
+    padding: 20px;
+  }
+  
+  .explore-page h2 {
+    margin-bottom: 24px;
+    color: #4CCEAC;
+  }
+  
+  .search-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    background-color: #1F2A40;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .search-button {
+    padding: 12px 24px;
+    background-color: #4CCEAC;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s;
+  }
+  
+  .search-button:hover {
+    background-color: #3db89b;
+  }
+  
+  .search-button:disabled {
+    background-color: #2d3748;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    background-color: rgba(245, 101, 101, 0.1);
+    color: #f56565;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+  }
+  
+  .stock-details {
+    background-color: #1F2A40;
+    border-radius: 12px;
+    padding: 24px;
+  }
+  
+  .stock-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #2d3748;
+  }
+  
+  .stock-title h3 {
+    font-size: 24px;
+    margin: 0;
+    color: #4CCEAC;
+  }
+  
+  .company-name {
+    display: block;
+    color: #a0aec0;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  
+  .stock-price {
+    text-align: right;
+  }
+  
+  .current-price {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .price-change {
+    display: block;
+    margin-top: 4px;
+    color: #4CCEAC;
+  }
+  
+  .price-change.negative {
+    color: #f56565;
+  }
+  
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+  }
+  
+  .metric-section {
+    background-color: #283593;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  
+  .metric-section h4 {
+    color: #4CCEAC;
+    margin-bottom: 16px;
+  }
+  
+  .metric-items {
+    display: grid;
+    gap: 12px;
+  }
+  
+  .metric-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .metric-item label {
+    color: #a0aec0;
+    font-size: 14px;
+  }
+  
+  .metric-item span {
+    font-weight: 500;
+  }
+  
+  @media (max-width: 768px) {
+    .search-section {
+      flex-direction: column;
+    }
+    
+    .stock-header {
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .stock-price {
+      text-align: left;
+    }
+  }

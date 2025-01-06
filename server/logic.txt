@@ -1,0 +1,4 @@
+implement saving logic
+when saving, check the existing stock, if it exists then add more share
+use average cost strategy
+
