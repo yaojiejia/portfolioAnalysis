@@ -31,7 +31,7 @@ const Signup = () => {
     const { confirmPassword, ...signupData } = formData;
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/signup/', signupData, {
+      const response = await axios.post('http://54.82.100.124:8000/signup/', signupData, {
         withCredentials: true,
       });
       
