@@ -170,7 +170,7 @@ def run_portfolio_optimization(tickers, start_date, end_date, target_return, met
     result = {
         "weights": {ticker: float(weight) for ticker, weight in zip(top15_tickers, optimal.x) if weight > 0.00},
         # Sort the weights dictionary by value in descending order
-        "weights": dict(sorted({ticker: float(weight) for ticker, weight in zip(top15_tickers, optimal.x) if weight > 0.00}.items(), key=lambda item: item[1], reverse=True)),
+        "weights": dict(sorted({ticker: float(weight) for ticker, weight in zip(top15_tickers, optimal.x) if weight > 0.00001}.items(), key=lambda item: item[1], reverse=True)),
         "expected_annual_return": None,
         "annual_volatility": None,
         "sharpe_ratio": None
@@ -208,7 +208,7 @@ def main():
     
 
     # Call the new function
-    results = run_portfolio_optimization(tickers, start_date, end_date, 0.04, 'sharpe')
+    results = run_portfolio_optimization(tickers, start_date, end_date, 0.34, 'sharpe')
     print(results)
 
 if __name__ == "__main__":

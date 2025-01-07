@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Dashboard from './pages/Dashboard';
 import ManagePortfolio from './pages/ManagePortfolio';
+import AIPortfolio from './pages/AIPortfolio';
 import Explore from './pages/Explore';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -57,6 +58,12 @@ const ProtectedLayout = ({ children }) => {
               <Link to="/manage-portfolio" className="nav-link">
                 <span className="icon">📈</span>
                 Manage Portfolio
+              </Link>
+            </div>
+            <div className="nav-item">
+              <Link to="/ai-portfolio" className="nav-link">
+                <span className="icon">🤖</span>
+                AI Portfolio
               </Link>
             </div>
           </div>
@@ -118,6 +125,11 @@ function App() {
           <Route path="/manage-portfolio" element={
             <ProtectedLayout>
               <ManagePortfolio />
+            </ProtectedLayout>
+          } />
+          <Route path="/ai-portfolio" element={
+            <ProtectedLayout>
+              <AIPortfolio />
             </ProtectedLayout>
           } />
 
