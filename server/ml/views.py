@@ -6,5 +6,5 @@ class MlAPI(APIView):
     def get(self, request):
         expected_return = request.query_params.get("expected_return")
         method = request.query_params.get("method")
-        results = run_portfolio_optimization(expected_return, method)
+        results = run_portfolio_optimization(float(expected_return), method)   
         return Response(results)

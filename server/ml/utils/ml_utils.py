@@ -185,7 +185,7 @@ def run_portfolio_optimization(target_return, method_choice):
     result = {
         "weights": {ticker: float(weight) for ticker, weight in zip(top15_tickers, optimal.x) if weight > 0.00},
         # Sort the weights dictionary by value in descending order
-        "weights": dict(sorted({ticker: float(weight) for ticker, weight in zip(top15_tickers, optimal.x) if weight > 0.00}.items(), key=lambda item: item[1], reverse=True)),
+        "weights": dict(sorted({ticker: float(weight) for ticker, weight in zip(top15_tickers, optimal.x) if weight > 0.00001}.items(), key=lambda item: item[1], reverse=True)),
         "expected_annual_return": None,
         "annual_volatility": None,
         "sharpe_ratio": None

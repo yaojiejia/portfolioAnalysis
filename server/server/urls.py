@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from api.views import StockAPI, ModifyDBAPI, SearchDBAPI
 from userauth.views import SignupView, LoginView, LogoutView, RefreshView, UserView, TestAuthAPI  # Add UserView
+from ml.views import MlAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -12,6 +13,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('refresh/', RefreshView.as_view(), name='refresh'),
     path('transactions/', SearchDBAPI.as_view(), name='search'),
-    path('user/', UserView.as_view(), name='user'),  # Add this line
+    path('user/', UserView.as_view(), name='user'), 
     path('test-auth/', TestAuthAPI.as_view(), name='test-auth'),
+    path('ml/', MlAPI.as_view(), name='ml'),
 ]

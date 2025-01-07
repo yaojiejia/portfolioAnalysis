@@ -55,12 +55,12 @@ ALLOWED_HOSTS = []
 
 # Cookie settings
 SESSION_COOKIE_SAMESITE = "Lax"  # or 'None' if needed
-SESSION_COOKIE_SECURE = False  # Set to True in production with HTTPS
+SESSION_COOKIE_SECURE = True  # Set to True in production with HTTPS
 SESSION_COOKIE_HTTPONLY = True
 
 # If using csrf tokens
 CSRF_COOKIE_SAMESITE = "Lax"  # or 'None' if needed
-CSRF_COOKIE_SECURE = False  # Set to True in production with HTTPS
+CSRF_COOKIE_SECURE = True  # Set to True in production with HTTPS
 CSRF_COOKIE_HTTPONLY = True
 
 # Application definition
