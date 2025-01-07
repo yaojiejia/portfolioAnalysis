@@ -51,7 +51,12 @@ SECRET_KEY = "django-insecure-rq0!v4x_0sn)=n25^h1d%8yx(31x6iqo2ztqukrw*jw^1vvn%v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '54.82.100.124',
+    'ec2-54-82-100-124.compute-1.amazonaws.com',
+    'localhost',
+    '127.0.0.1',
+]
 
 # Cookie settings
 SESSION_COOKIE_SAMESITE = "Lax"  # or 'None' if needed
