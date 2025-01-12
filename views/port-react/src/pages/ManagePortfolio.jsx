@@ -74,18 +74,10 @@ function ManagePortfolio() {
     }
 
     try {
-      const token = localStorage.getItem('access_token');
-      const cleanToken = token ? token.replace(/^"|"$/g, '') : '';
-
       const response = await api.post('/db/', {
         action: 'buy',
         symbol: foundStock.symbol,
         shares: parseInt(shares)
-      }, {
-        headers: {
-          'Authorization': `Bearer ${cleanToken}`,
-          'Content-Type': 'application/json'
-        }
       });
 
       if (response.data.error) {
@@ -120,18 +112,10 @@ function ManagePortfolio() {
     }
 
     try {
-      const token = localStorage.getItem('access_token');
-      const cleanToken = token ? token.replace(/^"|"$/g, '') : '';
-
       const response = await api.post('/db/', {
         action: 'sell',
         symbol: selectedStock.symbol,
         shares: parseInt(sellShares)
-      }, {
-        headers: {
-          'Authorization': `Bearer ${cleanToken}`,
-          'Content-Type': 'application/json'
-        }
       });
 
       if (response.data.error) {

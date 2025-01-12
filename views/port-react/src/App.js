@@ -1,26 +1,12 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './context/AuthContext';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import ManagePortfolio from './pages/ManagePortfolio';
 import AIPortfolio from './pages/AIPortfolio';
 import Explore from './pages/Explore';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
 import './App.css';
 
-// Protected Layout Component
-const ProtectedLayout = ({ children }) => {
-  const { user, loading, logout } = useAuth();
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
-
+const Layout = ({ children }) => {
   return (
     <div className="container">
       <aside className="sidebar">
@@ -32,11 +18,8 @@ const ProtectedLayout = ({ children }) => {
               alt="Profile" 
               className="profile-img"
             />
-            <h3>{user.username || 'User'}</h3>
+            <h3>Guest User</h3>
             <p className="role">Portfolio Manager</p>
-            <button onClick={logout} className="sidebar-button">
-              Logout
-            </button>
           </div>
         </div>
 
@@ -83,62 +66,36 @@ const ProtectedLayout = ({ children }) => {
   );
 };
 
-// Public Layout Component
-const PublicLayout = ({ children }) => {
-  const { user } = useAuth();
-
-  if (user) {
-    return <Navigate to="/" />;
-  }
-
-  return children;
-};
-
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/login" element={
-            <PublicLayout>
-              <Login />
-            </PublicLayout>
-          } />
-          <Route path="/signup" element={
-            <PublicLayout>
-              <Signup />
-            </PublicLayout>
-          } />
-
-          {/* Protected Routes */}
-          <Route path="/" element={
-            <ProtectedLayout>
-              <Dashboard />
-            </ProtectedLayout>
-          } />
-          <Route path="/explore" element={
-            <ProtectedLayout>
-              <Explore />
-            </ProtectedLayout>
-          } />
-          <Route path="/manage-portfolio" element={
-            <ProtectedLayout>
-              <ManagePortfolio />
-            </ProtectedLayout>
-          } />
-          <Route path="/ai-portfolio" element={
-            <ProtectedLayout>
-              <AIPortfolio />
-            </ProtectedLayout>
-          } />
-
-          {/* Catch all route - redirect to dashboard if logged in, otherwise to login */}
-          <Route path="*" element={
-            <Navigate to="/" replace />
-          } />
-        </Routes>
-      </AuthProvider>
+      <Routes>
+        <Route path="/" element={
+          <Layout>
+            <Dashboard />
+          </Layout>
+        } />
+        <Route path="/explore" element={
+          <Layout>
+            <Explore />
+          </Layout>
+        } />
+        <Route path="/manage-portfolio" element={
+          <Layout>
+            <ManagePortfolio />
+          </Layout>
+        } />
+        <Route path="/ai-portfolio" element={
+          <Layout>
+            <AIPortfolio />
+          </Layout>
+        } />
+        <Route path="*" element={
+          <Layout>
+            <Dashboard />
+          </Layout>
+        } />
+      </Routes>
     </BrowserRouter>
   );
 }
